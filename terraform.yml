@@ -1,0 +1,21 @@
+---
+- name: AWS Infrastructure with Terraform
+  hosts: localhost
+  vars:
+    - projectpath: "./aws"
+    - tfstate: present
+    - tfplan: /root/terraform/aws/aws.tfplan
+
+  tasks:
+    - name: Terraform Init
+      terraform:
+        project_path: "{{ projectpath }}"
+        plan_file: "{{ tfplan }}"
+        state: "{{ tfstate }}"
+        force_init: "true"
+        variables_file: variables.tfvar
+        backend_config:
+          region: "us-east-1"
+          bucket: "terraform-rreddy"
+          key: "aws.tfstate" 
+      tags: terraform
