@@ -10,8 +10,8 @@
     - name: Terraform Init
       terraform:
         project_path: "{{ projectpath }}"
-        plan_file: "{{ tfplan }}"
-        state: "{{ tfstate }}"
+        plan_file: "{{ tf_plan_file_path }}"
+        state: "{{ tf_state }}"
         force_init: "true"
         variables_file: variables.tfvar
         backend_config:
