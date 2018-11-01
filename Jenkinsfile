@@ -45,4 +45,11 @@ pipeline {
        }
         }
     }
+    post {
+        cleanup {
+            echo 'Cleaning WorkSpace'
+            deleteDir() /* clean up our workspace */
+        }
+    }	
+	
 }
