@@ -7,11 +7,11 @@ pipeline {
                 description: "Choose appropriate!")
             string(
                 name: 'tfplan',
-                defaultValue:"$WORKSPACE/flusx7/aws/aws.tfplan",
+                defaultValue:"$WORKSPACE/flux7/aws/aws.tfplan",
                 description: "Path of the plan file")
             string(
                 name: 'projectpath',
-                defaultValue:"$WORKSPACE/flusx7/aws",
+                defaultValue:"$WORKSPACE/flux7/aws",
                 description: "Project Path")
     }
     stages {
@@ -33,7 +33,7 @@ pipeline {
 
                  become: 'true',
 
-                 playbook: 'flux7/terraform.yml',
+                 playbook: '$WORKSPACE/flux7/terraform.yml',
 
                  colorized: 'true',
 
