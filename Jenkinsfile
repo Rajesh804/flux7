@@ -30,6 +30,8 @@ pipeline {
                  installation: 'Ansible2.7.1',
 
                  playbook: '/var/lib/jenkins/workspace/terraform/flux7/terraform.yml',
+                   
+                 limit: 'localhost',  
 
                  colorized: 'true',
 
