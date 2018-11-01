@@ -2,11 +2,11 @@ pipeline {
     agent any
         parameters {
             choice(
-                name: 'tfstate',
+                name: 'tf_state',
                 choices:"planned\npresent\nabsent",
                 description: "Choose appropriate!")
             string(
-                name: 'tfplan',
+                name: 'tf_plan_file_path',
                 defaultValue:"$WORKSPACE/flux7/aws/aws.tfplan",
                 description: "Path of the plan file")
             string(
@@ -35,9 +35,9 @@ pipeline {
 
                  colorized: 'true',
 
-                 tags: 'tfstart',
+                 tags: 'terraform',
 
-                 extras: '-e projectpath=${projectpath} -e tfstate=${tfstate} -e tfplan=${tfplan} -vvv'
+                 extras: '-e projectpath=${projectpath} -e tfstate=${tf_state} -e tfplan=${tf_plan_file_path} -vvv'
 
                )
 
