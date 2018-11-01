@@ -15,7 +15,7 @@ pipeline {
                 description: "Project Path")
     }
     stages {
-        stage("build") {
+        stage("Ansible Playbook Execution") {
             steps {
           sh('echo Initiating playbook')
 
