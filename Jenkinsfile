@@ -1,5 +1,6 @@
 pipeline {
     agent any
+	def workspace = pwd()
         parameters {
             choice(
                 name: 'tf_state',
@@ -7,11 +8,11 @@ pipeline {
                 description: "Choose appropriate!")
             string(
                 name: 'tf_plan_file_path',
-		    defaultValue:"${env.WORKSPACE}/aws/aws.tfplan",
+		    defaultValue:"${workspace}/aws/aws.tfplan",
                 description: "Path of the plan file")
             string(
                 name: 'projectpath',
-		    defaultValue:"${env.WORKSPACE}/aws",
+		    defaultValue:"${workspace}/aws",
                 description: "Project Path")
     }
     stages {
