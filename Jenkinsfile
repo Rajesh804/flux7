@@ -33,7 +33,7 @@ pipeline {
 
                  become: 'true',
 
-                 playbook: '$WORKSPACE/flusx7/terraForm.yml',
+                 playbook: 'flux7/terraform.tml',
 
                  colorized: 'true',
 
