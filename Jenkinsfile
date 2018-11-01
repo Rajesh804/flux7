@@ -7,11 +7,11 @@ pipeline {
                 description: "Choose appropriate!")
             string(
                 name: 'tf_plan_file_path',
-		    defaultValue:"/var/lib/jenkins/workspace/${env.JOB_NAME}/aws/aws.tfplan",
+		    defaultValue:"${env.WORKSPACE}/aws/aws.tfplan",
                 description: "Path of the plan file")
             string(
                 name: 'projectpath',
-		    defaultValue:"/var/lib/jenkins/workspace/${env.JOB_NAME}/aws",
+		    defaultValue:"${env.WORKSPACE}/aws",
                 description: "Project Path")
     }
     stages {
