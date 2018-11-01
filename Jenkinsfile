@@ -17,9 +17,8 @@ pipeline {
     stages {
         stage("Ansible Playbook Execution") {
             steps {
-          sh('echo Initiating playbook')
-
-          sh('ls -ltr ${WORKSPACE}')
+         
+          sh('echo Ansible Playbook Execution')
 
           wrap([$class:'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
 
