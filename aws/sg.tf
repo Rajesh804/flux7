@@ -40,7 +40,7 @@ resource "aws_security_group" "sgweb" {
   vpc_id="${aws_vpc.vpc.id}"
 
   tags {
-    Name = "hid_web_security_group"
+    Name = "rajesh_web_security_group"
   }
 
   tags {

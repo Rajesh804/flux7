@@ -4,7 +4,7 @@ resource "aws_vpc" "vpc" {
   enable_dns_hostnames = true
 
   tags {
-    Name = "hid_vpc"
+    Name = "rajesh_vpc"
   }
   tags {
     environment = "development"
@@ -18,7 +18,7 @@ resource "aws_subnet" "public_subnet_a" {
   map_public_ip_on_launch = false
 
   tags {
-    Name = "hid_public_subnet_a"
+    Name = "rajesh_public_subnet_a"
   }
   tags {
     environment = "development"
@@ -31,7 +31,7 @@ resource "aws_subnet" "private_subnet_a" {
   availability_zone       = "${var.zone_a}"
 
   tags {
-    Name = "hid_private_subnet_a"
+    Name = "rajesh_private_subnet_a"
   }
   tags {
     environment = "development"
@@ -42,7 +42,7 @@ resource "aws_internet_gateway" "internet_gateway" {
   vpc_id = "${aws_vpc.vpc.id}"
 
   tags {
-    Name = "hid_internet_gateway"
+    Name = "rajesh_internet_gateway"
   }
   tags {
     environment = "development"
@@ -59,7 +59,7 @@ resource "aws_route_table" "public_routetable" {
   }
 
   tags {
-    Name = "hid_public_routetable"
+    Name = "rajesh_public_routetable"
   }
   tags {
     environment = "development"
@@ -80,7 +80,7 @@ resource "aws_nat_gateway" "nat" {
   subnet_id     = "${aws_subnet.public_subnet_a.id}"
 
   tags {
-    Name = "hid_nat_gateway"
+    Name = "rajesh_nat_gateway"
   }
   tags {
     environment = "development"
@@ -96,7 +96,7 @@ resource "aws_route_table" "private_routetable" {
   }
 
   tags {
-    Name = "hid_private_routetable"
+    Name = "rajesh_private_routetable"
   }
   tags {
     environment = "development"

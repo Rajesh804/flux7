@@ -10,7 +10,7 @@ resource "aws_instance" "web" {
    user_data = "${file("install.sh")}"
 
   tags {
-    Name = "hid_ec2_web_server"
+    Name = "rajesh_ec2_web_server"
   }
   tags {
     environment = "development"
