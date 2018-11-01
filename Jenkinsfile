@@ -19,7 +19,6 @@ pipeline {
             steps {
          
           sh('echo Ansible Playbook Execution')
-	  sh('rm -rf *')
 
           wrap([$class:'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
 
