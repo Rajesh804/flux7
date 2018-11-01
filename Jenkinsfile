@@ -37,7 +37,7 @@ pipeline {
 
                  tags: 'terraform',
 
-                 extras: '-e projectpath=${projectpath} -e tfstate=${tf_state} -e tfplan=${tf_plan_file_path} -vvv'
+                 extras: '-e projectpath=${projectpath} -e tf_state=${tf_state} -e tf_plan_file_path=${tf_plan_file_path} -vvv'
 
                )
 
