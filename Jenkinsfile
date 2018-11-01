@@ -17,34 +17,19 @@ pipeline {
     stages {
         stage("Ansible Playbook Execution") {
             steps {
-         
           sh('echo Ansible Playbook Execution')
-
           wrap([$class:'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-
             sh "export ANSIBLE_FORCE_COLOR=true; "
-
                ansiblePlaybook(
-
                  installation: 'Ansible2.7.1',
-
                  playbook: 'terraform.yml',
-                   
                  limit: 'localhost',  
-
                  colorized: 'true',
-
                  tags: 'terraform',
-
                  extras: '-e projectpath=${projectpath} -e tf_state=${tf_state} -e tf_plan_file_path=${tf_plan_file_path} -vvv'
-
                )
-
           }
-
-       }
         }
+      }
     }
-
-	
 }
