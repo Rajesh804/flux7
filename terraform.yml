@@ -1,11 +1,6 @@
 ---
 - name: AWS Infrastructure with Terraform
   hosts: localhost
-  vars:
-    - projectpath: "./aws"
-    - tfstate: present
-    - tfplan: /root/terraform/aws/aws.tfplan
-
   tasks:
     - name: Terraform Init
       terraform:
