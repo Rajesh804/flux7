@@ -1,6 +1,6 @@
+def workspace = pwd()
 pipeline {
     agent any
-	def workspace = pwd()
         parameters {
             choice(
                 name: 'tf_state',
