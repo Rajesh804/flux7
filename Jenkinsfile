@@ -7,11 +7,11 @@ pipeline {
                 description: "Choose appropriate!")
             string(
                 name: 'tf_plan_file_path',
-                defaultValue:"$WORKSPACE/flux7/aws/aws.tfplan",
+                defaultValue:"$WORKSPACE/aws/aws.tfplan",
                 description: "Path of the plan file")
             string(
                 name: 'projectpath',
-                defaultValue:"$WORKSPACE/flux7/aws",
+                defaultValue:"$WORKSPACE/aws",
                 description: "Project Path")
     }
     stages {
@@ -28,7 +28,7 @@ pipeline {
 
                  installation: 'Ansible2.7.1',
 
-                 playbook: '/var/lib/jenkins/workspace/terraform/flux7/terraform.yml',
+                 playbook: 'terraform.yml',
                    
                  limit: 'localhost',  
 
@@ -45,11 +45,6 @@ pipeline {
        }
         }
     }
-    post {
-        cleanup {
-            echo 'Cleaning WorkSpace'
-            deleteDir() /* clean up our workspace */
-        }
-    }	
+
 	
 }
