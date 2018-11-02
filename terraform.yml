@@ -11,6 +11,6 @@
         variables_file: variables.tfvar
         backend_config:
           region: "us-east-1"
-          bucket: "terraform-rreddy"
+          bucket: "{{ s3_bucket }}"
           key: "aws.tfstate" 
       tags: terraform
