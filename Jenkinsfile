@@ -26,7 +26,7 @@ pipeline {
                  limit: 'localhost',  
                  colorized: 'true',
                  tags: 'terraform',
-                 extras: '-e projectpath=${projectpath} -e tf_state=${tf_state} -e tf_plan_file_path=${tf_plan_file_path} -vvv'
+                 extras: '-e projectpath=${params.projectpath} -e tf_state=${params.tf_state} -e tf_plan_file_path=${params.tf_plan_file_path} -vvv'
                )
           }
         }
